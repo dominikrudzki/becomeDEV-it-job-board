@@ -1,6 +1,13 @@
 <div class="search">
-  <app-job-search></app-job-search>
+	<app-job-search></app-job-search>
 </div>
-<div class="job-list">
-  <app-job></app-job>
-</div>
+<section class="job-list">
+	<div class="container">
+		<div>
+			<app-job *ngFor="let job of jobs" [job]="this.job"></app-job>
+		</div>
+		<div>
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</section>

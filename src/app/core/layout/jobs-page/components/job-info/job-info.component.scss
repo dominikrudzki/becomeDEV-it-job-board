@@ -1,0 +1,90 @@
+.job-info {
+	background-color: #303030;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 15px 15px 15px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100%;
+	transition: transform 5s;
+
+	.job-close {
+		position: fixed;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 15px;
+		right: 15px;
+		background-color: #00000090;
+		width: 30px;
+		height: 30px;
+		border-radius: 5px;
+
+		img {
+			width: 24px;
+		}
+	}
+
+	.job-bg {
+		background-color: #7c7c7c;
+		margin-left: -15px;
+		width: calc(100% + 30px);
+		height: 100px;
+	}
+
+	.job-logo {
+		background-color: #fff;
+		width: 80px;
+		height: 80px;
+		margin-top: -60px;
+		border-radius: 20px;
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 8px;
+
+		img {
+			width: 100%;
+		}
+	}
+	.job-primary-info {
+		&::after {
+			display: block;
+			content: "";
+			height: 2px;
+			margin-left: -15px;
+			width: calc(100% + 30px);
+			background-color: #7b7b7b;
+			margin-bottom: 8px;
+		}
+
+		.left {
+			& p:first-child {
+				font-weight: 700;
+				font-size: 20px;
+				margin-bottom: 15px;
+			}
+
+			p {
+				margin-bottom: 8px;
+			}
+		}
+
+		.right {
+			p {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	.job-desc {
+		p:first-child {
+			font-weight: 700;
+			font-size: 20px;
+			margin-bottom: 15px;
+		}
+	}
+}

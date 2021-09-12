@@ -1,1 +1,38 @@
-<p>job works!</p>
+<div class="job" routerLink="job-offer/{{ this.job.id }}">
+	<div class="job-left">
+		<p class="job-title">
+			{{ this.job.title }}
+		</p>
+		<div class="job-company-name">
+			<img
+				src="../../../../../../assets/images/bx_bxs-building-house.svg"
+			/>
+			<p>{{ this.job.company }}</p>
+		</div>
+		<div class="job-company-location">
+			<img
+				src="../../../../../../assets/images/carbon_location-filled.svg"
+			/>
+			<p>{{ this.job.location }}</p>
+		</div>
+		<p class="job-salary">{{ this.job.salary }}</p>
+	</div>
+	<div class="job-right">
+		<p class="job-date">{{ this.job.add_date }}</p>
+		<div class="job-exp">
+			<div *ngFor="let exp of this.job.exp_level">
+				{{ this.exp }}
+			</div>
+		</div>
+		<div class="job-lang">
+			<div *ngFor="let lang of this.job.languages">
+				{{ this.lang }}
+			</div>
+		</div>
+		<div class="job-tech">
+			<div *ngFor="let tech of this.job.technologies">
+				{{ this.tech }}
+			</div>
+		</div>
+	</div>
+</div>
