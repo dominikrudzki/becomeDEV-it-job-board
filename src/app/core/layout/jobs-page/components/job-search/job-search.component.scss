@@ -1,0 +1,74 @@
+@import "../../../../../shared/variables";
+
+.job-search {
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+
+		& > * {
+			margin-bottom: 0.8em;
+		}
+
+		& > input,
+		& > select {
+			height: 45px;
+			border: 2px solid #fff;
+			color: $font-color1;
+			border-radius: 10px;
+			font-size: 20px;
+			padding: 0 0.5em;
+			background-color: unset;
+		}
+
+		& > input {
+			width: 100%;
+		}
+
+		& > select {
+			width: fit-content;
+			padding: 0 15px;
+			// appearance: none;
+			position: relative;
+
+			&:after {
+				content: "v";
+				display: block;
+				width: 20px;
+				height: 20px;
+				background-color: red;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+		button {
+			margin-left: auto;
+			background-color: $accent-color;
+			border: none;
+			color: $font-color1;
+			height: 45px;
+			padding: 0 20px;
+			border-radius: 10px;
+			font-size: 22px;
+		}
+	}
+
+	.filters {
+		display: flex;
+		overflow-x: scroll;
+		padding: 0 10px;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		select {
+			margin: 0 5px;
+			background-color: #d1d1d1;
+			font-size: 18px;
+			padding: 10px 15px;
+			border-radius: 10px;
+		}
+	}
+}
