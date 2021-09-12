@@ -3,10 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { LoginPageComponent } from './core/layout/login-page/login-page.component';
+import { JobsPageComponent } from './core/layout/jobs-page/jobs-page.component';
+import { JobSearchComponent } from './core/layout/jobs-page/components/job-search/job-search.component';
+import { JobComponent } from './core/layout/jobs-page/components/job/job.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    LoginPageComponent,
+    JobsPageComponent,
+    JobSearchComponent,
+    JobComponent
   ],
   imports: [
     BrowserModule,
