@@ -1,56 +1,26 @@
-<div class="job-info" #info>
+<div class="job-info">
 	<div routerLink="" class="job-close">
 		<img src="../../../../../../assets/images/mdi_forwardburger.svg" />
 	</div>
-	<div class="job-bg"></div>
+	<div class="job-bg" [style.background-color]="this.jobInfo.bg_color"></div>
 	<div class="job-logo">
 		<img src="../../../../../../assets/images/ACME.svg" alt="logo" />
 	</div>
 	<div class="job-primary-info">
 		<div class="left">
-			<p>Angular Developer</p>
-			<p>Company: ACME</p>
-			<p>Location: Poland</p>
-			<p>Salary: 13 000 - 16 000 PLN</p>
+			<p>{{ this.jobInfo.title || "Unknown" }}</p>
+			<p>Company: {{ this.jobInfo.company }}</p>
+			<p>Location: {{ this.jobInfo.location }}</p>
+			<p>Salary: {{ this.jobInfo.salary }}</p>
 		</div>
 		<div class="right">
-			<p>Exp. level: Mid</p>
-			<p>Remote: partly remote</p>
-			<p>Contact: email@email.com</p>
+			<p>Exp. level: {{ this.jobInfo.exp_level }}</p>
+			<p>Remote: {{ this.jobInfo.remote }}</p>
+			<p>Contact: {{ this.jobInfo.contact }}</p>
 		</div>
 	</div>
 	<div class="job-desc">
 		<p>Job Description</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
-			aspernatur et dolores, voluptatibus repellat quas magni laboriosam
-			ab quod natus commodi, neque quo velit laborum illum. Ab similique
-			corporis consequuntur. Lorem ipsum dolor sit amet consectetur
-			adipisicing elit. Doloribus, voluptas quidem illo esse provident
-			fuga at? Maiores nisi tempora, dolore ut tenetur nemo voluptate
-			consequatur ea minima ad, cum quis? Enim ratione cumque blanditiis
-			officiis, excepturi iste aspernatur accusantium officia debitis
-			illum temporibus. Suscipit eveniet quaerat, ipsum molestias quo illo
-			accusamus. Ab quaerat incidunt voluptate, dignissimos quasi quisquam
-			repudiandae nulla. Delectus et perferendis laboriosam deserunt
-			accusamus sequi cum assumenda doloremque optio, explicabo aliquam
-			dolorum sit expedita impedit repellat qui, nisi consequatur tenetur
-			quia officia rem reiciendis! Quisquam numquam totam laboriosam!
-			Officia, consectetur aliquam error nobis, quae reiciendis quod eius
-			ea suscipit consequatur pariatur dolorum tenetur eveniet adipisci
-			dolor fugiat odio minus expedita consequuntur dolores facilis
-			doloribus optio? Ipsum, corrupti beatae? Voluptatem quam
-			consequuntur est dolor amet dignissimos exercitationem sit
-			aspernatur, molestias accusamus totam sunt perspiciatis unde earum
-			iusto quia architecto magnam eum culpa, qui nesciunt eos, cum
-			recusandae. Consequuntur, earum? Repellendus possimus consequatur
-			quidem suscipit sint. Vero officia quo excepturi nobis, sit ipsum,
-			repellat eveniet dolores in aut dolor maiores doloribus pariatur
-			nesciunt qui tempore iusto consectetur reprehenderit nam asperiores.
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
-			consectetur expedita dicta. Consequuntur magni a necessitatibus
-			obcaecati? Incidunt dignissimos sit labore eaque commodi suscipit
-			nostrum id deserunt, asperiores animi nisi.
-		</p>
+		<p [innerHTML]="this.jobInfo.desc">ggg</p>
 	</div>
 </div>

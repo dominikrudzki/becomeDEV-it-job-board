@@ -11,7 +11,6 @@ export class JobsPageComponent implements OnInit {
 
 	constructor(private DataService: DataService) {
 		this.jobs = this.DataService.getJobs();
-		console.log(this.jobs);
 	}
 
 	ngOnInit(): void {}

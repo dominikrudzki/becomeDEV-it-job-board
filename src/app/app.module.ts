@@ -9,6 +9,7 @@ import { JobsPageComponent } from './core/layout/jobs-page/jobs-page.component';
 import { JobSearchComponent } from './core/layout/jobs-page/components/job-search/job-search.component';
 import { JobComponent } from './core/layout/jobs-page/components/job/job.component';
 import { JobInfoComponent } from './core/layout/jobs-page/components/job-info/job-info.component';
+import { CheckValuePipe } from './shared/pipes/check-value.pipe';
 
 @NgModule({
 	declarations: [
@@ -19,6 +20,7 @@ import { JobInfoComponent } from './core/layout/jobs-page/components/job-info/jo
 		JobSearchComponent,
 		JobComponent,
 		JobInfoComponent,
+		CheckValuePipe,
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [],
