@@ -21,7 +21,7 @@
 		<p class="job-date">{{ this.job.add_date | date: "d/M/yyyy" }}</p>
 		<div class="job-exp">
 			<div *ngFor="let exp of this.job.exp_level">
-				{{ this.exp }}
+				<div>{{ this.exp }}</div>
 			</div>
 		</div>
 		<div class="job-lang">

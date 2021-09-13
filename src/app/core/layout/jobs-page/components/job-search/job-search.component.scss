@@ -25,10 +25,11 @@
 		}
 
 		& > select {
+			margin-right: 10px;
 			width: fit-content;
 			padding: 0 15px;
-			// appearance: none;
 			position: relative;
+			cursor: pointer;
 
 			&:after {
 				content: "v";
@@ -43,7 +44,6 @@
 		}
 
 		button {
-			margin-left: auto;
 			background-color: $accent-color;
 			border: none;
 			color: $font-color1;
@@ -51,6 +51,12 @@
 			padding: 0 20px;
 			border-radius: 10px;
 			font-size: 22px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: $accent-color-hover;
+			}
 		}
 	}
 

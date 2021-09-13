@@ -6,6 +6,12 @@
 	padding: 15px;
 	display: flex;
 	margin-bottom: 15px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: rgb(107, 107, 107);
+	}
 
 	.job-left {
 		display: flex;
@@ -17,9 +23,8 @@
 			font-size: 18px;
 			font-weight: 700;
 		}
-		.job-company-name {
-			display: none;
-		}
+
+		.job-company-name,
 		.job-company-location {
 			display: flex;
 			align-items: center;
@@ -29,6 +34,11 @@
 				font-size: 16px;
 			}
 		}
+
+		.job-company-name {
+			display: none;
+		}
+
 		.job-salary {
 			font-size: 18px;
 			color: $accent-color;
@@ -48,6 +58,61 @@
 			position: absolute;
 			right: 0;
 			bottom: 0;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.job {
+		.job-left {
+			font-size: 20px;
+
+			.job-title {
+				font-size: 24px;
+			}
+
+			.job-company-name,
+			.job-company-location {
+				display: flex;
+
+				p {
+					font-size: 20px;
+				}
+			}
+
+			.job-salary {
+				font-size: 22px;
+			}
+		}
+
+		.job-right {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			justify-content: space-between;
+
+			& > * {
+				display: block;
+			}
+
+			.job-date {
+				position: unset;
+				margin-left: auto;
+			}
+			.job-exp,
+			.job-lang,
+			.job-tech {
+				display: flex;
+				justify-content: flex-end;
+				gap: 10px;
+
+				& > div {
+					background-color: #575757;
+					padding: 5px 10px;
+					border-radius: 5px;
+					font-size: 20px;
+				}
+			}
 		}
 	}
 }
