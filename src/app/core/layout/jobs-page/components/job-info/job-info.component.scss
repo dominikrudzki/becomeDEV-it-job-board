@@ -89,3 +89,44 @@
 		}
 	}
 }
+
+@media (min-width: 768px) {
+	.job-info {
+		.job-close {
+			position: absolute;
+		}
+		.job-bg {
+			height: 140px;
+		}
+		.job-logo {
+			width: 100px;
+			height: 100px;
+			margin-top: -80px;
+			margin-bottom: 15px;
+		}
+		.job-primary-info {
+			display: grid;
+			grid-template-areas:
+				"left right"
+				"line line";
+
+			&::after {
+				margin-top: 15px;
+				margin-bottom: 15px;
+				grid-area: line;
+			}
+			.left {
+				p {
+					font-size: 18px;
+				}
+			}
+			.right {
+				align-self: flex-end;
+
+				p {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
