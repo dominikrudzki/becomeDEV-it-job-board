@@ -1,4 +1,8 @@
-<div class="job" routerLink="job-offer/{{ this.job.id }}">
+<div
+	class="job"
+	routerLink="job-offer/{{ this.job.id }}"
+	(click)="this.scrollInfoTop()"
+>
 	<div class="job-left">
 		<p class="job-title">
 			{{ this.job.title | checkValue }}

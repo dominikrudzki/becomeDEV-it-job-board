@@ -24,15 +24,15 @@ export class JobInfoComponent implements OnInit {
 		document.body.style.overflow = val;
 
 		if (window.matchMedia('(max-width: 1200px)')) {
-			// document.body.style.overflow = 'unset';
+			document.body.style.overflow = 'unset';
 		}
 	}
 
 	ngOnInit(): void {
-		// this.setOverflow('hidden');
+		this.setOverflow('hidden');
 	}
 
 	ngOnDestroy(): void {
-		// this.setOverflow('unset');
+		this.setOverflow('unset');
 	}
 }

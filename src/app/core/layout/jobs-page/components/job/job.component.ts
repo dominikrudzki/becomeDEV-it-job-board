@@ -11,4 +11,12 @@ export class JobComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	scrollInfoTop() {
+		const job_info = document.querySelector('.job-info');
+
+		if (job_info) {
+			job_info.scrollTop = 0;
+		}
+	}
 }
