@@ -133,7 +133,12 @@
 
 @media (min-width: 1200px) {
 	.job-info {
-		position: static;
+		position: sticky;
+		top: 15px;
 		border-radius: 15px;
+
+		.job-close {
+			display: none;
+		}
 	}
 }
