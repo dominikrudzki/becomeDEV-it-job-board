@@ -12,19 +12,32 @@
 	</div>
 	<div class="filters">
 		<select name="" id="">
-			<option value="">Technologies</option>
+			<option selected="true" value="" disabled>Technologies</option>
+			<option value="">All</option>
+			<option value="">HTML</option>
+			<option value="">JavaScript</option>
 		</select>
 		<select name="" id="">
-			<option value="">Salary</option>
+			<option selected="true" value="" disabled>Salary</option>
+			<option value="">All</option>
 		</select>
 		<select name="" id="">
-			<option value="">Experience Level</option>
+			<option selected="true" value="" disabled>Experience Level</option>
+			<option value="">All</option>
 		</select>
 		<select name="" id="">
-			<option value="">Location</option>
+			<option selected="true" value="" disabled>Location</option>
+			<option value="">All</option>
+			<option *ngFor="let location of jobLocations" value="">
+				{{ location }}
+			</option>
 		</select>
 		<select name="" id="">
-			<option value="">Remote</option>
+			<option selected="true" value="" disabled>Remote</option>
+			<option value="">All</option>
+			<option value="">Yes</option>
+			<option value="">No</option>
+			<option value="">Partly-remote</option>
 		</select>
 	</div>
 </section>
