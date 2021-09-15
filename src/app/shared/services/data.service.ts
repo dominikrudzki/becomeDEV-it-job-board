@@ -137,4 +137,22 @@ export class DataService {
 	getJobById(id: number) {
 		return this.jobList[id];
 	}
+
+	filterJobs(
+		jobFilters = {
+			tech: 'all',
+			salary: 'all',
+			exp_lvl: 'all',
+			location: 'all',
+			remote: 'all',
+		}
+	) {
+		console.log(
+			this.jobList.filter((job) => {
+				// console.log(job.location);
+
+				return job.location === jobFilters.location;
+			})
+		);
+	}
 }

@@ -10,6 +10,7 @@ import { JobSearchComponent } from './core/layout/jobs-page/components/job-searc
 import { JobComponent } from './core/layout/jobs-page/components/job/job.component';
 import { JobInfoComponent } from './core/layout/jobs-page/components/job-info/job-info.component';
 import { CheckValuePipe } from './shared/pipes/check-value.pipe';
+import { FormControl, FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -22,7 +23,7 @@ import { CheckValuePipe } from './shared/pipes/check-value.pipe';
 		JobInfoComponent,
 		CheckValuePipe,
 	],
-	imports: [BrowserModule, AppRoutingModule],
+	imports: [BrowserModule, AppRoutingModule, FormsModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
