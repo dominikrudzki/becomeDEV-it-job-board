@@ -149,10 +149,11 @@ export class DataService {
 	) {
 		console.log(
 			this.jobList.filter((job) => {
-				// console.log(job.location);
-
-				return job.location === jobFilters.location;
-			})
+				return (
+					jobFilters.location == 'all' ||
+					job.location == jobFilters.location
+				);
+			}).length
 		);
 	}
 }
