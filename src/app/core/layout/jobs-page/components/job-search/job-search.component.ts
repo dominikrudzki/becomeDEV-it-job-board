@@ -7,7 +7,8 @@ import { DataService } from 'src/app/shared/services/data.service';
 	styleUrls: ['./job-search.component.scss'],
 })
 export class JobSearchComponent implements OnInit {
-	jobLocations: any;
+	jobTecnologies: any[] = [];
+	jobLocations: any[] = [];
 
 	constructor(private dataService: DataService) {}
 
@@ -18,11 +19,18 @@ export class JobSearchComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		const technologies: string[] = [];
 		const locations: string[] = [];
+		// const
 
 		this.dataService.getJobs().forEach((job) => {
+			job.technologies.forEach((tech) => technologies.push(tech));
+
 			locations.push(job.location);
 		});
+		// console.log(technologies);
+
+		this.jobTecnologies = this.findUniques(technologies).sort();
 
 		this.jobLocations = this.findUniques(locations).sort();
 	}
