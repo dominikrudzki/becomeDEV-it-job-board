@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { jobFilterInterface } from 'src/app/shared/interfaces/jobFilter.interface';
 import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
@@ -10,10 +11,10 @@ export class JobSearchComponent implements OnInit {
 	jobTecnologies: any[] = [];
 	jobLocations: any[] = [];
 
-	jobFilters = {
-		tech: 'all',
+	jobFilters: jobFilterInterface = {
+		technologies: 'all',
 		salary: 'all',
-		exp_lvl: 'all',
+		exp_level: 'all',
 		location: 'all',
 		remote: 'all',
 	};

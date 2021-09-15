@@ -4,7 +4,7 @@
 		<button (click)="this.filterJobs()">Find jobs</button>
 	</div>
 	<div class="filters">
-		<select name="" id="" [(ngModel)]="jobFilters.tech">
+		<select name="" id="" [(ngModel)]="jobFilters.technologies">
 			<option selected="true" value="all" disabled>Technologies</option>
 			<option value="all">All</option>
 			<option *ngFor="let tech of jobTecnologies" [value]="tech">
@@ -19,7 +19,7 @@
 			<option value="2">10 000 - 20 000 PLN</option>
 			<option value="3">> 20 000 PLN</option>
 		</select>
-		<select name="" id="" [(ngModel)]="jobFilters.exp_lvl">
+		<select name="" id="" [(ngModel)]="jobFilters.exp_level">
 			<option selected="true" value="all" disabled>
 				Experience Level
 			</option>
