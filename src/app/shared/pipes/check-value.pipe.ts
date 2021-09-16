@@ -5,6 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CheckValuePipe implements PipeTransform {
 	transform(value: unknown): unknown {
-		return value ? value : 'UNKNOWN';
+		return value ? 'yes' : 'no';
 	}
 }
