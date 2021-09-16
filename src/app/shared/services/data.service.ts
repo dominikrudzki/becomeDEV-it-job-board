@@ -32,6 +32,7 @@ export class DataService {
 
 	filterJobs(
 		jobFilters = {
+			title: 'all',
 			technologies: 'all',
 			salary: 'all',
 			exp_level: 'all',
@@ -45,6 +46,7 @@ export class DataService {
 			jobListCopy = jobListCopy.filter(
 				(job) =>
 					jobFilters[key as keyof jobFilterInterface] === 'all' ||
+					jobFilters[key as keyof jobFilterInterface] === '' ||
 					(Array.isArray(job[key]) &&
 						(<Array<string>>job[key]).includes(
 							jobFilters[key as keyof jobFilterInterface]

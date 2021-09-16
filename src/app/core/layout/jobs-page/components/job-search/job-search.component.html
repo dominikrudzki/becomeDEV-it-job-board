@@ -1,9 +1,13 @@
-<section class="job-search">
+<section class="job-search" (change)="displayResetBtn()">
 	<div class="container">
-		<input type="text" placeholder="job title" />
+		<input
+			type="text"
+			placeholder="job title"
+			[(ngModel)]="jobFilters.title"
+		/>
 		<button (click)="this.filterJobs()">Find jobs</button>
 	</div>
-	<div class="filters" (change)="displayResetBtn()">
+	<div class="filters">
 		<select name="" id="" [(ngModel)]="jobFilters.technologies">
 			<option selected="true" value="all" disabled>Technologies</option>
 			<option value="all">All</option>

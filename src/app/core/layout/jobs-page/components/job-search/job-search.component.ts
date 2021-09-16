@@ -11,6 +11,7 @@ export class JobSearchComponent implements OnInit {
 	jobTecnologies: any[] = [];
 	jobLocations: any[] = [];
 	jobFilters: jobFilterInterface = {
+		title: '',
 		technologies: 'all',
 		salary: 'all',
 		exp_level: 'all',
@@ -52,6 +53,8 @@ export class JobSearchComponent implements OnInit {
 		for (let key in this.jobFilters) {
 			this.jobFilters[key as keyof jobFilterInterface] = 'all';
 		}
+
+		this.jobFilters.title = '';
 
 		this.change = false;
 	}
