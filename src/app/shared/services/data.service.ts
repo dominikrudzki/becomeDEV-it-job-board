@@ -21,16 +21,13 @@ export class DataService {
 		});
 		if (fetchResponse.ok) {
 			this.jobList = await fetchResponse.json();
+			this.jobListiltered = this.jobList;
 			this.jobListChange.next();
 		}
 	}
 
 	getJobs() {
-		// this.jobListChange.subscribe(() => {
-		// 	console.log('change');
-		// 	return this.jobList;
-		// });
-		return this.jobList;
+		return this.jobListiltered;
 	}
 
 	filterJobs(
@@ -55,7 +52,10 @@ export class DataService {
 					jobFilters[key as keyof jobFilterInterface] === job[key]
 			);
 		});
+		// this.jobListiltered = jobListCopy;
 		this.jobListiltered = jobListCopy;
-		console.log(jobListCopy);
+		this.jobListChange.next();
+
+		// console.log(jobListCopy);
 	}
 }

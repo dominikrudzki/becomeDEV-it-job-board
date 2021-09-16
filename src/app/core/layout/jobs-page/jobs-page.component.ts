@@ -9,16 +9,13 @@ import { DataService } from 'src/app/shared/services/data.service';
 export class JobsPageComponent implements OnInit {
 	jobs!: any;
 
-	constructor(private DataService: DataService) {
-		// this.jobs = this.DataService.getJobs();
-		// this.DataService.jobListChange.subscribe(() => {
-		// 	this.jobs = this.DataService.getJobs();
-		// });
-	}
+	constructor(private DataService: DataService) {}
 
 	ngOnInit(): void {
 		this.DataService.jobListChange.subscribe(() => {
 			this.jobs = this.DataService.getJobs();
 		});
+
+		this.jobs = this.DataService.getJobs();
 	}
 }

@@ -95,7 +95,7 @@
 		"title": "Applications Developer - .Net/Angular",
 		"company": "Admin cmp",
 		"location": "Finland",
-		"technologies": [".NET"],
+		"technologies": [".NET", "scss"],
 		"salary": "4 800 - 9 300 PLN",
 		"remote": "partly remote",
 		"languages": ["finnish", "english"],

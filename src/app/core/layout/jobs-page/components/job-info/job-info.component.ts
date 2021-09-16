@@ -9,7 +9,7 @@ import { DataService } from 'src/app/shared/services/data.service';
 	styleUrls: ['./job-info.component.scss'],
 })
 export class JobInfoComponent implements OnInit {
-	jobInfo!: any;
+	jobInfo!: jobInterface;
 	jobLoaded: boolean = false;
 
 	constructor(
@@ -31,7 +31,7 @@ export class JobInfoComponent implements OnInit {
 
 	getRouteParams() {
 		this.route.params.subscribe((params) => {
-			this.jobInfo = this.DataService.getJobs()[params.id];
+			this.jobInfo = this.DataService.jobList[params.id];
 		});
 	}
 
