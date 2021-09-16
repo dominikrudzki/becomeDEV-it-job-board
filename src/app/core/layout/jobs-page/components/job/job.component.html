@@ -5,7 +5,7 @@
 >
 	<div class="job-left">
 		<p class="job-title">
-			{{ this.job.title | checkValue }}
+			{{ this.job.title }}
 		</p>
 		<div class="job-company-name">
 			<img src="/assets/images/bx_bxs-building-house.svg" />
@@ -15,7 +15,9 @@
 			<img src="/assets/images/carbon_location-filled.svg" />
 			<p>{{ this.job.location }}</p>
 		</div>
-		<p class="job-salary">{{ this.job.salary }}</p>
+		<p class="job-salary">
+			{{ this.job.salary.min }} - {{ this.job.salary.max }} PLN
+		</p>
 	</div>
 	<div class="job-right">
 		<p class="job-date">{{ this.job.add_date | date: "d/M/yyyy" }}</p>
