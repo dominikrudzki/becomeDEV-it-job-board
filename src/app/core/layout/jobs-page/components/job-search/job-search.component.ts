@@ -52,6 +52,7 @@ export class JobSearchComponent implements OnInit {
 		for (let key in this.jobFilters) {
 			this.jobFilters[key as keyof jobFilterInterface] = 'all';
 		}
+
 		this.change = false;
 	}
 

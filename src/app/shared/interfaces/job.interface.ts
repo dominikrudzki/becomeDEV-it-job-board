@@ -6,7 +6,7 @@ export interface jobInterface {
 	location: string;
 	technologies: Array<string>;
 	salary: { min: number; max: number };
-	remote: boolean;
+	remote: string;
 	languages: Array<string>;
 	contact: string;
 	exp_level: Array<string>;
