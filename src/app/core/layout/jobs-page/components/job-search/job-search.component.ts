@@ -10,7 +10,6 @@ import { DataService } from 'src/app/shared/services/data.service';
 export class JobSearchComponent implements OnInit {
 	jobTecnologies: any[] = [];
 	jobLocations: any[] = [];
-
 	jobFilters: jobFilterInterface = {
 		technologies: 'all',
 		salary: 'all',
@@ -18,6 +17,7 @@ export class JobSearchComponent implements OnInit {
 		location: 'all',
 		remote: 'all',
 	};
+	change = false;
 
 	constructor(private dataService: DataService) {}
 
@@ -44,11 +44,15 @@ export class JobSearchComponent implements OnInit {
 		this.initializeSelectOptions();
 	}
 
+	displayResetBtn() {
+		this.change = true;
+	}
+
 	reset() {
-		console.log('click');
 		for (let key in this.jobFilters) {
 			this.jobFilters[key as keyof jobFilterInterface] = 'all';
 		}
+		this.change = false;
 	}
 
 	filterJobs() {

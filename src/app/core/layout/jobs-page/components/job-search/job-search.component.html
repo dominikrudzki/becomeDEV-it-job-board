@@ -3,7 +3,7 @@
 		<input type="text" placeholder="job title" />
 		<button (click)="this.filterJobs()">Find jobs</button>
 	</div>
-	<div class="filters">
+	<div class="filters" (change)="displayResetBtn()">
 		<select name="" id="" [(ngModel)]="jobFilters.technologies">
 			<option selected="true" value="all" disabled>Technologies</option>
 			<option value="all">All</option>
@@ -43,6 +43,8 @@
 			<option value="no">No</option>
 			<option value="partly">Partly-remote</option>
 		</select>
-		<button (click)="reset()">reset filters</button>
+		<button *ngIf="this.change" class="reset" (click)="reset()">
+			reset filters
+		</button>
 	</div>
 </section>

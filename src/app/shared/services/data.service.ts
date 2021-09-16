@@ -52,10 +52,7 @@ export class DataService {
 					jobFilters[key as keyof jobFilterInterface] === job[key]
 			);
 		});
-		// this.jobListiltered = jobListCopy;
 		this.jobListiltered = jobListCopy;
 		this.jobListChange.next();
-
-		// console.log(jobListCopy);
 	}
 }
