@@ -9,14 +9,15 @@ import { DataService } from 'src/app/shared/services/data.service';
 	styleUrls: ['./job-info.component.scss'],
 })
 export class JobInfoComponent implements OnInit {
-	jobInfo!: jobInterface;
+	jobInfo!: any;
+	jobLoaded: boolean = false;
 
 	constructor(
 		private route: ActivatedRoute,
 		private DataService: DataService
 	) {
-		this.route.params.subscribe((params) => {
-			this.jobInfo = this.DataService.getJobById(params.id);
+		this.DataService.jobListChange.subscribe(() => {
+			this.getRouteParams();
 		});
 	}
 
@@ -28,8 +29,16 @@ export class JobInfoComponent implements OnInit {
 		}
 	}
 
+	getRouteParams() {
+		this.route.params.subscribe((params) => {
+			this.jobInfo = this.DataService.getJobs()[params.id];
+		});
+	}
+
 	ngOnInit(): void {
 		this.setOverflow('hidden');
+
+		this.getRouteParams();
 	}
 
 	ngOnDestroy(): void {

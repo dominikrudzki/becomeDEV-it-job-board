@@ -2,27 +2,27 @@
 	<div routerLink="" class="job-close">
 		<img src="/assets/images/mdi_forwardburger.svg" />
 	</div>
-	<div class="job-bg" [style.background-color]="this.jobInfo.bg_color"></div>
+	<div class="job-bg" [style.background-color]="this.jobInfo?.bg_color"></div>
 	<div class="job-logo">
 		<img src="/assets/images/ACME.svg" alt="logo" />
 	</div>
 	<div class="job-primary-info">
 		<div class="left">
-			<p>{{ this.jobInfo.title || "Unknown" }}</p>
-			<p>Company: {{ this.jobInfo.company }}</p>
-			<p>Location: {{ this.jobInfo.location }}</p>
-			<p>Salary: {{ this.jobInfo.salary }}</p>
+			<p>{{ this.jobInfo?.title }}</p>
+			<p>Company: {{ this.jobInfo?.company }}</p>
+			<p>Location: {{ this.jobInfo?.location }}</p>
+			<p>Salary: {{ this.jobInfo?.salary }}</p>
 		</div>
 		<div class="right">
 			<p>
-				Exp. level: <span>{{ this.jobInfo.exp_level }}</span>
+				Exp. level: <span>{{ this.jobInfo?.exp_level }}</span>
 			</p>
-			<p>Remote: {{ this.jobInfo.remote }}</p>
-			<p>Contact: {{ this.jobInfo.contact }}</p>
+			<p>Remote: {{ this.jobInfo?.remote }}</p>
+			<p>Contact: {{ this.jobInfo?.contact }}</p>
 		</div>
 	</div>
 	<div class="job-desc">
 		<p>Job Description</p>
-		<p [innerHTML]="this.jobInfo.desc">ggg</p>
+		<p [innerHTML]="this.jobInfo?.desc">none</p>
 	</div>
 </div>

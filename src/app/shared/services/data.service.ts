@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { jobInterface } from '../interfaces/job.interface';
 import { jobFilterInterface } from '../interfaces/jobFilter.interface';
 
@@ -7,6 +8,8 @@ import { jobFilterInterface } from '../interfaces/jobFilter.interface';
 })
 export class DataService {
 	jobList: Array<jobInterface> = [];
+	jobListiltered: Array<jobInterface> = [];
+	jobListChange: Subject<any> = new Subject<any>();
 
 	constructor() {
 		this.initializeData();
@@ -18,15 +21,16 @@ export class DataService {
 		});
 		if (fetchResponse.ok) {
 			this.jobList = await fetchResponse.json();
+			this.jobListChange.next();
 		}
 	}
 
 	getJobs() {
+		// this.jobListChange.subscribe(() => {
+		// 	console.log('change');
+		// 	return this.jobList;
+		// });
 		return this.jobList;
-	}
-
-	getJobById(id: number) {
-		return this.jobList[id];
 	}
 
 	filterJobs(
@@ -51,7 +55,7 @@ export class DataService {
 					jobFilters[key as keyof jobFilterInterface] === job[key]
 			);
 		});
-		this.jobList = jobListCopy;
+		this.jobListiltered = jobListCopy;
 		console.log(jobListCopy);
 	}
 }

@@ -24,16 +24,18 @@ export class JobSearchComponent implements OnInit {
 	findUniques = (val: any) => [...new Set(val)];
 
 	ngOnInit(): void {
-		const technologies: string[] = [];
-		const locations: string[] = [];
+		this.dataService.jobListChange.subscribe(() => {
+			const technologies: string[] = [];
+			const locations: string[] = [];
 
-		this.dataService.getJobs().forEach((job) => {
-			job.technologies.forEach((tech) => technologies.push(tech));
-			locations.push(job.location);
+			this.dataService.getJobs().forEach((job) => {
+				job.technologies.forEach((tech) => technologies.push(tech));
+				locations.push(job.location);
+			});
+
+			this.jobTecnologies = this.findUniques(technologies).sort();
+			this.jobLocations = this.findUniques(locations).sort();
 		});
-
-		this.jobTecnologies = this.findUniques(technologies).sort();
-		this.jobLocations = this.findUniques(locations).sort();
 	}
 
 	filterJobs() {
