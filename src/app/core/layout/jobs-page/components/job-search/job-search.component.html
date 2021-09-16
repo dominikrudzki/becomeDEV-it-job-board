@@ -36,12 +36,13 @@
 				{{ location }}
 			</option>
 		</select>
-		<select name="" id="" [(ngModel)]="jobFilters.remote">
+		<select name="" id="" [(ngModel)]="jobFilters.remote" [value]="null">
 			<option selected="true" value="all" disabled>Remote</option>
 			<option value="all">All</option>
 			<option value="yes">Yes</option>
 			<option value="no">No</option>
 			<option value="partly">Partly-remote</option>
 		</select>
+		<button (click)="reset()">reset filters</button>
 	</div>
 </section>

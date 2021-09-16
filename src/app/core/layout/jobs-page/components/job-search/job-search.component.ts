@@ -44,6 +44,13 @@ export class JobSearchComponent implements OnInit {
 		this.initializeSelectOptions();
 	}
 
+	reset() {
+		console.log('click');
+		for (let key in this.jobFilters) {
+			this.jobFilters[key as keyof jobFilterInterface] = 'all';
+		}
+	}
+
 	filterJobs() {
 		this.dataService.filterJobs(this.jobFilters);
 	}
