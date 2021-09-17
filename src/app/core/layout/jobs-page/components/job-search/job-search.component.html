@@ -7,7 +7,7 @@
 		/>
 		<button (click)="this.filterJobs()">Find jobs</button>
 	</div>
-	<div class="filters">
+	<div class="filters" (change)="this.filterJobs()">
 		<select name="" id="" [(ngModel)]="jobFilters.technologies">
 			<option selected="true" value="all" disabled>Technologies</option>
 			<option value="all">All</option>

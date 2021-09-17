@@ -55,7 +55,7 @@ export class JobSearchComponent implements OnInit {
 		}
 
 		this.jobFilters.title = '';
-
+		this.filterJobs();
 		this.change = false;
 	}
 
