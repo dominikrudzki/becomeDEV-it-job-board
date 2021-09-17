@@ -9,8 +9,7 @@ import { JobsPageComponent } from './core/layout/jobs-page/jobs-page.component';
 import { JobSearchComponent } from './core/layout/jobs-page/components/job-search/job-search.component';
 import { JobComponent } from './core/layout/jobs-page/components/job/job.component';
 import { JobInfoComponent } from './core/layout/jobs-page/components/job-info/job-info.component';
-import { CheckValuePipe } from './shared/pipes/check-value.pipe';
-import { FormControl, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TimeFromDatePipe } from './shared/pipes/time-from-date.pipe';
 
 @NgModule({
@@ -22,8 +21,7 @@ import { TimeFromDatePipe } from './shared/pipes/time-from-date.pipe';
 		JobSearchComponent,
 		JobComponent,
 		JobInfoComponent,
-		CheckValuePipe,
-  TimeFromDatePipe,
+		TimeFromDatePipe,
 	],
 	imports: [BrowserModule, AppRoutingModule, FormsModule],
 	providers: [],
