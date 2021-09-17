@@ -11,6 +11,7 @@ import { JobComponent } from './core/layout/jobs-page/components/job/job.compone
 import { JobInfoComponent } from './core/layout/jobs-page/components/job-info/job-info.component';
 import { CheckValuePipe } from './shared/pipes/check-value.pipe';
 import { FormControl, FormsModule } from '@angular/forms';
+import { TimeFromDatePipe } from './shared/pipes/time-from-date.pipe';
 
 @NgModule({
 	declarations: [
@@ -22,6 +23,7 @@ import { FormControl, FormsModule } from '@angular/forms';
 		JobComponent,
 		JobInfoComponent,
 		CheckValuePipe,
+  TimeFromDatePipe,
 	],
 	imports: [BrowserModule, AppRoutingModule, FormsModule],
 	providers: [],
