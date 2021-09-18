@@ -11,6 +11,7 @@ export class JobSearchComponent implements OnInit {
 	jobTecnologies: any[] = [];
 	jobExpLevels: any[] = [];
 	jobLocations: any[] = [];
+	jobRemotes: any[] = [];
 	jobFilters: jobFilterInterface = {
 		title: '',
 		technologies: 'all',
@@ -30,17 +31,19 @@ export class JobSearchComponent implements OnInit {
 		// const salary: string[] = [];
 		const exp_lvl: string[] = [];
 		const locations: string[] = [];
-		// const remote: string[] = [];
+		const remote: string[] = [];
 
 		this.dataService.getJobs().forEach((job) => {
 			job.technologies.forEach((tech) => technologies.push(tech));
 			job.exp_level.forEach((exp) => exp_lvl.push(exp));
 			locations.push(job.location);
+			remote.push(job.remote);
 		});
 
 		this.jobTecnologies = this.findUniques(technologies).sort();
 		this.jobExpLevels = this.findUniques(exp_lvl).sort();
 		this.jobLocations = this.findUniques(locations).sort();
+		this.jobRemotes = this.findUniques(remote).sort();
 	}
 
 	ngOnInit(): void {

@@ -27,7 +27,7 @@
 				Experience Level
 			</option>
 			<option value="all">All</option>
-			<option value="junior" *ngFor="let exp of jobExpLevels">
+			<option [value]="exp" *ngFor="let exp of jobExpLevels">
 				{{ exp }}
 			</option>
 		</select>
@@ -41,9 +41,9 @@
 		<select name="" id="" [(ngModel)]="jobFilters.remote" [value]="null">
 			<option selected="true" value="all" disabled>Remote</option>
 			<option value="all">All</option>
-			<option value="yes">Yes</option>
-			<option value="no">No</option>
-			<option value="partly">Partly</option>
+			<option [value]="remote" *ngFor="let remote of jobRemotes">
+				{{ remote }}
+			</option>
 		</select>
 		<button *ngIf="this.change" class="reset" (click)="reset()">
 			reset filters
