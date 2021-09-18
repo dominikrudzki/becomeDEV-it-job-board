@@ -41,6 +41,13 @@ export class DataService {
 		}
 	) {
 		let jobListCopy = [...this.jobList];
+		const checkSalaryCondition = (salary: any) => {
+			if (salary < 5000) return '0';
+			if (salary >= 5000 && salary < 10000) return '1';
+			if (salary >= 10000 && salary < 20000) return '2';
+			if (salary > 20000) return '3';
+			return '0';
+		};
 
 		(Object.keys(jobFilters) as (keyof jobInterface)[]).forEach((key) => {
 			jobListCopy = jobListCopy.filter(
@@ -51,7 +58,8 @@ export class DataService {
 						(<Array<string>>job[key]).includes(
 							jobFilters[key as keyof jobFilterInterface]
 						)) ||
-					jobFilters[key as keyof jobFilterInterface] === job[key]
+					jobFilters[key as keyof jobFilterInterface] === job[key] ||
+					jobFilters.salary === checkSalaryCondition(job.salary.min)
 			);
 		});
 		this.jobListiltered = jobListCopy;
