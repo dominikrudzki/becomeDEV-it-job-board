@@ -9,6 +9,7 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class JobSearchComponent implements OnInit {
 	jobTecnologies: any[] = [];
+	jobSalaries: any[] = [];
 	jobExpLevels: any[] = [];
 	jobLocations: any[] = [];
 	jobRemotes: any[] = [];
@@ -28,22 +29,24 @@ export class JobSearchComponent implements OnInit {
 
 	initializeSelectOptions() {
 		const technologies: string[] = [];
-		// const salary: string[] = [];
-		const exp_lvl: string[] = [];
+		const salaries: Number[] = [];
+		const exp_lvls: string[] = [];
 		const locations: string[] = [];
-		const remote: string[] = [];
+		const remotes: string[] = [];
 
 		this.dataService.getJobs().forEach((job) => {
 			job.technologies.forEach((tech) => technologies.push(tech));
-			job.exp_level.forEach((exp) => exp_lvl.push(exp));
+			salaries.push(job.salary.min);
+			job.exp_level.forEach((exp) => exp_lvls.push(exp));
 			locations.push(job.location);
-			remote.push(job.remote);
+			remotes.push(job.remote);
 		});
 
 		this.jobTecnologies = this.findUniques(technologies).sort();
-		this.jobExpLevels = this.findUniques(exp_lvl).sort();
+		this.jobSalaries = this.findUniques(salaries);
+		this.jobExpLevels = this.findUniques(exp_lvls).sort();
 		this.jobLocations = this.findUniques(locations).sort();
-		this.jobRemotes = this.findUniques(remote).sort();
+		this.jobRemotes = this.findUniques(remotes);
 	}
 
 	ngOnInit(): void {
@@ -53,6 +56,12 @@ export class JobSearchComponent implements OnInit {
 
 		this.initializeSelectOptions();
 	}
+
+	checkSalaryValues = (val: Number) => {
+		// console.log(this.dataService.checkSalaryCondition(val));
+
+		return this.dataService.checkSalaryCondition(val);
+	};
 
 	displayResetBtn() {
 		this.change = true;
