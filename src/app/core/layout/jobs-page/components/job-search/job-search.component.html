@@ -27,9 +27,9 @@
 				Experience Level
 			</option>
 			<option value="all">All</option>
-			<option value="junior">Junior</option>
-			<option value="mid">Mid</option>
-			<option value="senior">Senior</option>
+			<option value="junior" *ngFor="let exp of jobExpLevels">
+				{{ exp }}
+			</option>
 		</select>
 		<select name="" id="" [(ngModel)]="jobFilters.location">
 			<option selected="true" value="all" disabled>Location</option>

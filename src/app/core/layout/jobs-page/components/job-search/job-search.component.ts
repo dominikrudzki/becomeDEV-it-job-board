@@ -9,6 +9,7 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class JobSearchComponent implements OnInit {
 	jobTecnologies: any[] = [];
+	jobExpLevels: any[] = [];
 	jobLocations: any[] = [];
 	jobFilters: jobFilterInterface = {
 		title: '',
@@ -26,17 +27,19 @@ export class JobSearchComponent implements OnInit {
 
 	initializeSelectOptions() {
 		const technologies: string[] = [];
-		const salary: string[] = [];
+		// const salary: string[] = [];
 		const exp_lvl: string[] = [];
 		const locations: string[] = [];
-		const remote: string[] = [];
+		// const remote: string[] = [];
 
 		this.dataService.getJobs().forEach((job) => {
 			job.technologies.forEach((tech) => technologies.push(tech));
+			job.exp_level.forEach((exp) => exp_lvl.push(exp));
 			locations.push(job.location);
 		});
 
 		this.jobTecnologies = this.findUniques(technologies).sort();
+		this.jobExpLevels = this.findUniques(exp_lvl).sort();
 		this.jobLocations = this.findUniques(locations).sort();
 	}
 
