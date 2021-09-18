@@ -26,7 +26,10 @@ export class JobSearchComponent implements OnInit {
 
 	initializeSelectOptions() {
 		const technologies: string[] = [];
+		const salary: string[] = [];
+		const exp_lvl: string[] = [];
 		const locations: string[] = [];
+		const remote: string[] = [];
 
 		this.dataService.getJobs().forEach((job) => {
 			job.technologies.forEach((tech) => technologies.push(tech));
