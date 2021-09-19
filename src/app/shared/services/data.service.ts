@@ -31,10 +31,7 @@ export class DataService {
 	}
 
 	checkSalaryCondition = (salary: Number | String, value: String = 'num') => {
-		console.log(salary);
-
 		if (value === 'num') {
-			// console.log(typeof salary, value);
 			if (salary < 5000 || salary === '(1) < 5000') return '0';
 			if (
 				(salary >= 5000 && salary < 10000) ||
