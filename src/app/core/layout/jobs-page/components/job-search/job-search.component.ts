@@ -29,21 +29,21 @@ export class JobSearchComponent implements OnInit {
 
 	initializeSelectOptions() {
 		const technologies: string[] = [];
-		const salaries: Number[] = [];
+		const salaries: string[] = [];
 		const exp_lvls: string[] = [];
 		const locations: string[] = [];
 		const remotes: string[] = [];
 
 		this.dataService.getJobs().forEach((job) => {
 			job.technologies.forEach((tech) => technologies.push(tech));
-			salaries.push(job.salary.min);
+			salaries.push(this.checkSalaryValues(job.salary.min, 'str'));
 			job.exp_level.forEach((exp) => exp_lvls.push(exp));
 			locations.push(job.location);
 			remotes.push(job.remote);
 		});
 
 		this.jobTecnologies = this.findUniques(technologies).sort();
-		this.jobSalaries = this.findUniques(salaries);
+		this.jobSalaries = this.findUniques(salaries).sort();
 		this.jobExpLevels = this.findUniques(exp_lvls).sort();
 		this.jobLocations = this.findUniques(locations).sort();
 		this.jobRemotes = this.findUniques(remotes);
@@ -57,11 +57,8 @@ export class JobSearchComponent implements OnInit {
 		this.initializeSelectOptions();
 	}
 
-	checkSalaryValues = (val: Number) => {
-		// console.log(this.dataService.checkSalaryCondition(val));
-
-		return this.dataService.checkSalaryCondition(val);
-	};
+	checkSalaryValues = (salary: Number, value: String = 'num') =>
+		this.dataService.checkSalaryCondition(salary, value);
 
 	displayResetBtn() {
 		this.change = true;

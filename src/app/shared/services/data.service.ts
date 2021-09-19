@@ -30,11 +30,32 @@ export class DataService {
 		return this.jobListiltered;
 	}
 
-	checkSalaryCondition = (salary: Number) => {
-		if (salary < 5000) return '0';
-		if (salary >= 5000 && salary < 10000) return '1';
-		if (salary >= 10000 && salary < 20000) return '2';
-		if (salary > 20000) return '3';
+	checkSalaryCondition = (salary: Number | String, value: String = 'num') => {
+		console.log(salary);
+
+		if (value === 'num') {
+			// console.log(typeof salary, value);
+			if (salary < 5000 || salary === '(1) < 5000') return '0';
+			if (
+				(salary >= 5000 && salary < 10000) ||
+				salary === '(2) 5 000 - 10 000'
+			)
+				return '1';
+			if (
+				(salary >= 10000 && salary < 20000) ||
+				salary === '(3) 10 000 - 20 000'
+			)
+				return '2';
+			if (salary > 20000 || salary === '(4) > 20 000') return '3';
+		}
+
+		if (value === 'str') {
+			if (salary < 5000) return '(1) < 5000';
+			if (salary >= 5000 && salary < 10000) return '(2) 5 000 - 10 000';
+			if (salary >= 10000 && salary < 20000) return '(3) 10 000 - 20 000';
+			if (salary > 20000) return '(4) > 20 000';
+		}
+
 		return 'err';
 	};
 
